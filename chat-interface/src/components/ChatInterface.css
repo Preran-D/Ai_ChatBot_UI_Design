@@ -1,0 +1,164 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.chat-container.input-focused .message:not(.input-wrapper) {
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.messages-container {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  background-color: transparent;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 5px;
+  max-width: 85%;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.message.dull {
+  opacity: 0.6;
+  filter: brightness(0.95);
+}
+
+.message.ai {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.message-content {
+  word-wrap: break-word;
+  transition: opacity 0.3s ease;
+}
+
+.main-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.secondary-text {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  transition: opacity 0.3s ease;
+}
+
+.try-me-button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.try-me-button:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+.thinking-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.input-form {
+  margin-top: 10px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease-out;
+}
+
+.input-form.fade-down {
+  opacity: 1;
+  transform: translateY(0.2);
+  transition: 2000ms;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+  transform: translateY(-2px);
+}
+
+.message-input {
+  position: relative;
+  top: -20px;
+  padding: 12px 0;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #999;
+  width: 100%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.message-input.focused {
+  color: #000;
+}
+
+.message-input::placeholder {
+  color: #999;
+} 
+
+.send-button {
+  position: relative;
+  align-self: flex-start;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.send-button.active {
+  opacity: 1;
+}
+
+.send-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+@keyframes typingAnimation {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+}
